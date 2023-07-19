@@ -16,6 +16,8 @@ function App() {
   return(
     <>
       <NavMenu setShowForm={setShowForm}/>
+
+      
       {(showForm == true) ? <CreateBooking /> : <ViewBooking />}
     </>
     );
