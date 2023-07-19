@@ -20,7 +20,7 @@ function Login(){
     function handleClick(event){
         event.preventDefault();
         if (data.uname === "" || data.psw === "") {
-            setAuthMsg("Please provide values for both!!!")
+            setAuthMsg("Please provide values for both userName and password!!!")
         }else if(data.uname === 'admin' && data.psw === '1234'){
             setAuthMsg("WElcome Boss!!!");
         }else{
