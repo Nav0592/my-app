@@ -1,25 +1,24 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import logo from './logo.svg';
 import './App.css';
+import './mycomponents/Login'
+import { useState } from "react";
+
+
+import CreateBooking from './mycomponents/CreateBooking';
+import ViewBooking from './mycomponents/ViewBooking';
+import NavMenu from './mycomponents/NavMenu';
+import CounterDemo from "./mycomponents/CounterDemo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ const [showForm, setShowForm] = useState(true)
+  return(
+    <>
+      <NavMenu setShowForm={setShowForm}/>
+      {(showForm == true) ? <CreateBooking /> : <ViewBooking />}
+    </>
+    );
 }
 
 export default App;
