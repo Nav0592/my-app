@@ -62,11 +62,11 @@ function CreateBooking(){
                         </select>
                        <label htmlFor="email"><b>Email Id</b></label>
                         <input onChange={handleChange} type="text" placeholder="Enter your email" name="email" required />
-                        <p className="error">{emailMsg}</p>
+                        <p className="error alert">{emailMsg}</p>
 
                         <label htmlFor="date"><b>Booking date</b></label>
                         <input type="date" onChange={handleChange} placeholder="mm/dd/yyy" name="date" required />
-                        <p className="error">{dateMsg}</p>
+                        <p className="error alert">{dateMsg}</p>
 
                         <SubmitButton />
                         <p className="success-msg">{finalMsg}</p>

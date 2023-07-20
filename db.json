@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1000,
+      "username": "saira",
+      "password": "admin"
+    },
+    {
+      "id": 1001,
+      "username": "bano",
+      "password": "admin"
+    },
+    {
+      "id": 1002,
+      "username": "sania",
+      "password": "admin"
+    },
+    {
+      "username": "rajest",
+      "password": "2354234",
+      "id": 1003
+    },
+    {
+      "username": "sdfnjskfdh",
+      "password": "aklshdj",
+      "id": 1004
+    },
+    {
+      "firstname": "Naveen",
+      "lastname": "Thakur",
+      "email": "naveen.bingle@gmail.com",
+      "username": "naveen0592",
+      "password": "admin",
+      "id": 1005
+    },
+    {
+      "firstname": "Ayush",
+      "lastname": "thakur",
+      "email": "ayush@gmail.com",
+      "username": "ayush",
+      "password": "1234",
+      "id": 1006
+    }
+  ]
+}
