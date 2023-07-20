@@ -34,7 +34,6 @@ function CreateBooking(){
         function handleClick(event){
             event.preventDefault();
                 setFinalMsg("Service is Booked with the Booking id : 1159")
-           
         }
 
 
