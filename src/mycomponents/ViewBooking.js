@@ -1,19 +1,24 @@
 import NavMenu from "./NavMenu";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import UserInfo from "./Userinfo";
+
 
 
 
 function ViewBooking(){
 
    const[users, setUsers] = useState([]);
-   axios.get("http://localhost:4000/users")
-         .then((response) => {
-               console.log(response.data)
-               setUsers(response.data);
-            })
-        .catch((error) =>{ })
-        
+   useEffect(() => {
+      axios.get("http://localhost:4000/users")
+      .then((response) => {
+            console.log(response.data)
+            setUsers(response.data);
+         })
+     .catch((error) =>{ })
+   },[])
+   
+
     return(
         <>
            <div className="container">
@@ -23,12 +28,7 @@ function ViewBooking(){
                         {
                             users.map((users)=> {
                               return (
-                                 <div className="item">
-                                 <h4>Booking Id: {users.id}</h4> 
-                                 <p>Service Name: {users.firstname}</p>
-                                 <p>Booking Date: 07/18/2023</p>
-                                 <button className="btn btn-success">Delete</button>
-                              </div> 
+                                <UserInfo userProp={users}/>
                               )
                             })  
                         }

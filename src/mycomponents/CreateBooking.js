@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function CreateBooking(){
 
@@ -33,7 +34,9 @@ function CreateBooking(){
 
         function handleClick(event){
             event.preventDefault();
-                setFinalMsg("Service is Booked with the Booking id : 1159")
+            axios.post("http://localhost:4000/booking",data)
+            .then((response) => {setFinalMsg("DAta Addded successfully"+ response.data.id) })
+            .catch((error) =>{setFinalMsg("DAta not set") })
         }
 
 
