@@ -1,7 +1,6 @@
 import NavMenu from "./NavMenu";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import UserInfo from "./Userinfo";
 
 
 
@@ -28,7 +27,11 @@ function ViewBooking(){
                         {
                             users.map((users)=> {
                               return (
-                                <UserInfo userProp={users}/>
+                                <div className="item">
+                                    <h4>Booking Id: {users.id}</h4> 
+                                    <p>Service Name: {users.username}</p>
+                                    <button className="btn btn-success">Delete</button>
+                                </div> 
                               )
                             })  
                         }
