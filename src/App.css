@@ -52,6 +52,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .header ul {
   list-style: none;
@@ -124,4 +125,12 @@ form h3 {
 }
 .success-msg{
   color:green;
+}
+nav.nav {
+  width: 60%;
+  column-gap: 20px;
+}
+nav.nav a, .accmenu a{
+  text-decoration: none;
+  color: white;
 }

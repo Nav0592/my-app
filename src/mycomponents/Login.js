@@ -36,9 +36,9 @@ function Login(){
 
     return(
         <>
-            <h1>Please Enter your credentials..</h1>   
+         <div className="container">
             <form onSubmit={handleClick}>
-                <div className ="container">
+                    
                     <label htmlFor="firstname"><b>First name</b></label>
                     <input type="text"  name="firstname" value={data.firstname} onChange={handleChange} placeholder="Enter First Name" required />
                    
@@ -57,8 +57,8 @@ function Login(){
 
                     <input type="submit"  value="login" onClick={handleClick}></input>
                     {(authMsg != "")? <p className="result">{authMsg}</p> : null}
-                </div>
-            </form>
+             </form>
+        </div>
         </>
     );
 }

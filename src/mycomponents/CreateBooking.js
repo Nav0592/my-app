@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function CreateBooking(){
 
@@ -33,8 +34,9 @@ function CreateBooking(){
 
         function handleClick(event){
             event.preventDefault();
-                setFinalMsg("Service is Booked with the Booking id : 1150")
-           
+            axios.post("http://localhost:4000/booking",data)
+            .then((response) => {setFinalMsg("Data Addded successfully"+ response.data.id) })
+            .catch((error) =>{setFinalMsg("Data not set") })
         }
 
 
@@ -62,14 +64,14 @@ function CreateBooking(){
                         </select>
                        <label htmlFor="email"><b>Email Id</b></label>
                         <input onChange={handleChange} type="text" placeholder="Enter your email" name="email" required />
-                        <p className="error alert">{emailMsg}</p>
+                        {(emailMsg != "")? <p className="result">{emailMsg}</p> : null}
 
                         <label htmlFor="date"><b>Booking date</b></label>
                         <input type="date" onChange={handleChange} placeholder="mm/dd/yyy" name="date" required />
-                        <p className="error alert">{dateMsg}</p>
+                        {(dateMsg != "") ? <p className="error alert">{dateMsg}</p>:null}
 
                         <SubmitButton />
-                        <p className="success-msg">{finalMsg}</p>
+                       {(finalMsg != "")?<p className="success-msg">{finalMsg}</p>:null}
                 </form>
            </div> 
         </>
