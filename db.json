@@ -40,6 +40,14 @@
       "username": "ayush",
       "password": "1234",
       "id": 1006
+    },
+    {
+      "firstname": "test",
+      "lastname": "testing",
+      "email": "test@gmail.com",
+      "username": "tetser",
+      "password": "12345",
+      "id": 1007
     }
   ]
 }

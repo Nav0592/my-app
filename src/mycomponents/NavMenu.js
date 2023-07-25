@@ -7,10 +7,12 @@ function NavMenu({setShowForm}){
                <header className="header">
                     <div className="logo">MY CAR CARE</div>
                     <nav className="nav">
-                        <Link style={myStyle} to="home">Home</Link> |
-                        <Link style={myStyle} to="about"> About Us </Link> 
-                        
+                        <Link to="/createbooking">Create Booking </Link> |
+                        <Link to="/viewbooking"> View Booking  </Link> 
                     </nav>
+                    <div className="accmenu">
+                        <Link to="/login">Login</Link>
+                    </div>
                 </header>
                 
                        

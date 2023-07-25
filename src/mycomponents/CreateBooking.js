@@ -64,14 +64,14 @@ function CreateBooking(){
                         </select>
                        <label htmlFor="email"><b>Email Id</b></label>
                         <input onChange={handleChange} type="text" placeholder="Enter your email" name="email" required />
-                        <p className="error alert">{emailMsg}</p>
+                        {(emailMsg != "")? <p className="result">{emailMsg}</p> : null}
 
                         <label htmlFor="date"><b>Booking date</b></label>
                         <input type="date" onChange={handleChange} placeholder="mm/dd/yyy" name="date" required />
-                        <p className="error alert">{dateMsg}</p>
+                        {(dateMsg != "") ? <p className="error alert">{dateMsg}</p>:null}
 
                         <SubmitButton />
-                        <p className="success-msg">{finalMsg}</p>
+                       {(finalMsg != "")?<p className="success-msg">{finalMsg}</p>:null}
                 </form>
            </div> 
         </>

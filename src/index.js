@@ -8,6 +8,7 @@ import CounterDemo from './mycomponents/CounterDemo';
 import NavMenu from './mycomponents/NavMenu';
 import CreateBooking from './mycomponents/CreateBooking';
 import ViewBooking from './mycomponents/ViewBooking';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,8 +16,9 @@ root.render(
   <Routes>
     <Route path="/" element={<NavMenu />}>
       <Route index element={<CreateBooking />}/> 
-      <Route path="create-booking" element={<CreateBooking />}/>
-      <Route path="view-booking" element={<ViewBooking />}/>
+      <Route path="createbooking" element={<CreateBooking />}/>
+      <Route path="viewbooking" element={<ViewBooking />}/>
+      <Route path="login" element={<Login />}></Route>
     </Route>
   </Routes>
 </BrowserRouter>,document.getElementById('root')
