@@ -6,7 +6,14 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.logo img{
+  width: 100px;
+  height: 60px;
+}
+.footer{
+  text-align: center;
+  font-size: 18px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,14 +21,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000;
 }
 
 .App-link {
@@ -46,8 +53,8 @@
 }
 .header {
   text-align: center;
-  background-color: #003838;
-  color: white;
+  background-color: #fff;
+  color: #000;
   padding: 20px;
   margin: 0 auto;
   display: flex;
@@ -132,5 +139,8 @@ nav.nav {
 }
 nav.nav a, .accmenu a{
   text-decoration: none;
-  color: white;
+  color: #000;
+  font-size: 18px;
+  font-family: arial;
+  font-weight: 600;
 }

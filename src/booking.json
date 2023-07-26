@@ -1,0 +1,16 @@
+{
+    "booking":[
+        {
+            "id": 100,
+            "carType": "sumo",
+            "carModel": "BMW100",
+            "carNumber": "WB09B2121"
+        },
+        {
+            "id": 100,
+            "carType": "sumo",
+            "carModel": "BMW100",
+            "carNumber": "WB09B2121"
+        }
+    ]
+}

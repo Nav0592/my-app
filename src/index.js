@@ -9,6 +9,7 @@ import NavMenu from './mycomponents/NavMenu';
 import CreateBooking from './mycomponents/CreateBooking';
 import ViewBooking from './mycomponents/ViewBooking';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CreateAccount from './mycomponents/CreateAccount';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="createbooking" element={<CreateBooking />}/>
       <Route path="viewbooking" element={<ViewBooking />}/>
       <Route path="login" element={<Login />}></Route>
+      <Route path="create-account" element={<CreateAccount />}></Route>
     </Route>
   </Routes>
 </BrowserRouter>,document.getElementById('root')

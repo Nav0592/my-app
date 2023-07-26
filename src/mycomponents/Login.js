@@ -1,61 +1,52 @@
 import {useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const baseURL = "http://localhost:4000/users";
 
 function Login(){
-
-    const[data, setData] = useState({ firstname:"" , lastname:"" , email:"" , username:"" , password:"" });
+    const navigate = useNavigate();
+    const[newData, setData] = useState({ username:"" , password:"" });
     const[authMsg, setAuthMsg] = useState("");
     const[userMsg, setUserMsg]  = useState("");  
-
-    function handleChange(event){
-           setData({ ...data, [event.target.name]: event.target.value })
-
-           switch(event.target.name){
-                case "uname": 
-                if (event.target.value.length < 3)
-                console.log("Username must have more than 3 character");
-                break;
-           }
+    const[userCheck, setUserName] = useState('');
+   
+    function loginChange(event){
+        setData({ ...newData, [event.target.name]: event.target.value })
     }
-
-    function handleClick(event){
+    function handleLogin(event){
         event.preventDefault();
-        // if (data.uname === "" || data.psw === "") {
-        //     setAuthMsg("Please provide values for both userName and password!!!")
-        // }else if(data.uname === 'admin' && data.psw === '1234'){
-        //     setAuthMsg("WElcome Boss!!!");
-        // }else{
-        //     setAuthMsg("Hat Choor!!!");
-        // }
-
-        axios.post("http://localhost:4000/users",data)
-        .then((response) => {setAuthMsg("DAta Addded successfully"+ response.data.id) })
-        .catch((error) =>{setAuthMsg("DAta not set") })
+        axios.get(baseURL)
+        .then((response) => {
+            console.log(response.data);
+            console.log(newData.username);
+            const account = response.data.find((user) => user.username === newData.username);
+            if(account.username != newData.username){
+                setAuthMsg("Please check username");
+            }
+           else if (account && account.password != newData.password) {
+                setAuthMsg("Please check password");
+            }
+            else if(account.username == newData.username && account.password == newData.password){
+                setAuthMsg("Login successfully"+ account.username);
+                localStorage.setItem('username',account.username);
+                setUserName(account.username);
+                navigate('/viewbooking');
+            }
+        })
+        .catch((error) =>{setAuthMsg("Please check username & password correctly.") })
     }
-
+   
     return(
         <>
          <div className="container">
-            <form onSubmit={handleClick}>
-                    
-                    <label htmlFor="firstname"><b>First name</b></label>
-                    <input type="text"  name="firstname" value={data.firstname} onChange={handleChange} placeholder="Enter First Name" required />
-                   
-                    <label htmlFor="Lastname"><b>Last name</b></label>
-                    <input type="text"  name="lastname" value={data.lastname} onChange={handleChange} placeholder="Enter Last Name" required />
-                    
-                    <label htmlFor="email"><b>Email</b></label>
-                    <input type="email"  name="email" value={data.email} onChange={handleChange} placeholder="Enter Email" required />
-                    
-
+            <form onSubmit={handleLogin}>
                     <label htmlFor="uname"><b>Username</b></label>
-                    <input type="text"  name="username" value={data.username} onChange={handleChange} placeholder="Enter Username" required />
+                    <input type="text" onChange={loginChange} name="username" value={newData.username} placeholder="Enter Username" required />
                        
                     <label htmlFor="psw"><b>Password</b></label>
-                    <input type="password" onChange={handleChange} name="password" value={data.password} required />
+                    <input type="password" onChange={loginChange} name="password" value={newData.password} required />
 
-                    <input type="submit"  value="login" onClick={handleClick}></input>
+                    <input type="submit"  value="login" onClick={handleLogin}></input>
                     {(authMsg != "")? <p className="result">{authMsg}</p> : null}
              </form>
         </div>

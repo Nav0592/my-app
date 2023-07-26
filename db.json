@@ -48,6 +48,62 @@
       "username": "tetser",
       "password": "12345",
       "id": 1007
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "admin",
+      "password": "12345",
+      "id": 1008
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "adminisp",
+      "password": "12345",
+      "id": 1009
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "admin1",
+      "password": "12345",
+      "id": 1010
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "randy",
+      "password": "12345",
+      "id": 1011
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "OhedAli",
+      "password": "12345",
+      "id": 1012
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "ohed.ali@effem.com",
+      "password": "12345",
+      "id": 1013
+    },
+    {
+      "firstname": "Ohed",
+      "lastname": "Ali",
+      "email": "ohed.ali@infosys.com",
+      "username": "naveen12",
+      "password": "12345",
+      "id": 1014
     }
   ]
 }
